@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator System By WakeStar-jiangboyi6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .input-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Operator System By WakeStar-jiangboyi6</h1>
+    </div>
+    <div class="input-container">
+        <label for="operatorName">Name:</label>
+        <input type="text" id="operatorName">
+        <button onclick="searchOperator()">Search</button>
+    </div>
+    <div class="result" id="result"></div>
+
+    <script>
+        const CNdeltaforce_operator_archives = {'徐翌凡':'rk徐 ','78':'DMA'};
+        const Gdeltaforce_operator_archives = {'徐翌凡':'暂无 ','78':'JNTM'};
+        const CNmc_operator_archives = {'徐翌凡':'虚yifan ','78':'CNM'};
+        const Gmc_operator_archives = {'徐翌凡':'暂无 ','78':'78'};
+        const CNPUBG_operator_archives = {'徐翌凡':'未知 ','78' :'666'};
+        const GPUBG_operator_archives = {'徐翌凡':'暂无 ','78':'91'};
+
+        function wz_video(text) {
+            let result = '';
+            for (let zi of text) {
+                result += zi;
+            }
+            return result;
+        }
+
+        function searchOperator() {
+            const operatorName = document.getElementById('operatorName').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <p>${wz_video('干员名称:' + operatorName)}</p>
+                <p>${wz_video('三角洲名:' + CNdeltaforce_operator_archives[operatorName])}</p>
+                <p>${wz_video('Delta Force名:' + Gdeltaforce_operator_archives[operatorName])}</p>
+                <p>${wz_video('我的世界名:' + CNmc_operator_archives[operatorName])}</p>
+                <p>${wz_video('Minecraft名:' + Gmc_operator_archives[operatorName])}</p>
+                <p>${wz_video('和平精英名:' + CNPUBG_operator_archives[operatorName])}</p>
+                <p>${wz_video('PUBG名:' + GPUBG_operator_archives[operatorName])}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
